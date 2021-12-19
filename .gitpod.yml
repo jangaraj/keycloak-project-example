@@ -1,0 +1,50 @@
+tasks:
+  - name: start-environment
+    command: java start.java --http --openldap
+    
+ports:
+  - port: 1025  # mailhog
+    onOpen: ignore
+    visibility: public
+  - port: 1080  # mailhog
+    onOpen: open-browser
+    visibility: public
+  - port: 1389  # openldap
+    onOpen: ignore
+    visibility: public
+  - port: 1636  # openldap
+    onOpen: ignore
+    visibility: public
+  - port: 3000  # grafana
+    onOpen: open-browser
+    visibility: public
+  - port: 4000  # httpd
+    onOpen: open-browser
+    visibility: public
+  - port: 8443  # httpd
+    onOpen: ignore
+    visibility: public
+  - port: 8080  # keycloak
+    onOpen: open-browser
+    visibility: public
+  - port: 8443  # keycloak
+    onOpen: ignore
+    visibility: public
+  - port: 8790  # keycloak
+    onOpen: ignore
+    visibility: public
+  - port: 9990  # keycloak
+    onOpen: ignore
+    visibility: public
+  - port: 17080  # phpmyldapadmin
+    onOpen: open-browser
+    visibility: public
+    
+#vscode:
+#  extensions:
+#    - vscjava.vscode-maven
+#    - redhat.java
+#    - redhat.vscode-xml
+#    - redhat.fabric8-analytics
+#    - vscjava.vscode-java-debug
+#    - vscjava.vscode-java-test

@@ -12,3 +12,5 @@ services:
       IMPORT_VARSUBSTITUTION: "true"
     volumes:
       - ../../../config/stage/dev/realms:/config:z
+    networks:
+      - dev_network

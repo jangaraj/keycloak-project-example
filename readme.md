@@ -1,5 +1,10 @@
 Keycloak Project Example
 ---
+
+# Gitpod
+
+[![Gitpod ready-to-test](https://img.shields.io/badge/Gitpod-ready--to--test-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jangaraj/keycloak-project-example/tree/gitpod)
+
 # Introduction
 This repository contains a project setup for keycloak based projects.
 

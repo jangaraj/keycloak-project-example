@@ -46,6 +46,8 @@ services:
       # 172.17.0.1 is host.docker.internal
       - "id.acme.test:172.17.0.1"
       - "apps.acme.test:172.17.0.1"
+    networks:
+      - dev_network
     ports:
       - "8080:8080"
       - "8443:8443"
@@ -65,3 +67,13 @@ services:
       - ./run/keycloak/perf:/opt/jboss/keycloak/standalone/perf:z
 # Add third-party extensions
 #      - ./keycloak-ext/keycloak-metrics-spi-2.5.3-SNAPSHOT.jar:/opt/jboss/keycloak/standalone/deployments/keycloak-metrics-spi-2.5.3-SNAPSHOT.jar:z
+
+networks:
+  dev_network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.238.0/24
